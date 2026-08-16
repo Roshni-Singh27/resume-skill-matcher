@@ -1,30 +1,100 @@
-JOB TITLE: Junior Machine Learning Engineer
+BACKEND SOFTWARE ENGINEER
+TechAI Innovations
 
-We are looking for a Junior Machine Learning Engineer.
+--------------------------------------------------
+JOB DESCRIPTION
+--------------------------------------------------
 
-REQUIRED SKILLS:
+We are looking for a Backend Software Engineer to
+join our engineering team.
 
-Python
-Machine Learning
-Scikit-learn
-NumPy
-Pandas
-SQL
-Git
-Data Analysis
+The candidate will be responsible for developing,
+testing and maintaining scalable backend services
+and APIs.
 
-RESPONSIBILITIES:
+--------------------------------------------------
+REQUIRED SKILLS
+--------------------------------------------------
 
-Build and maintain machine learning models.
-Clean and preprocess datasets.
-Analyze data using Python.
-Develop machine learning pipelines.
-Work with other developers and data scientists.
-Use Git for version control.
+The candidate must have experience with:
 
-QUALIFICATIONS:
+- Python
+- FastAPI
+- REST APIs
+- PostgreSQL
+- Docker
+- Git
+- Linux
+- AWS
+- SQL
+- Object-Oriented Programming
+- Data Structures and Algorithms
 
-Bachelor's degree in Computer Science, Data Science,
-Artificial Intelligence or a related field.
+--------------------------------------------------
+PREFERRED SKILLS
+--------------------------------------------------
 
-Good programming and problem-solving skills.
+Experience with the following technologies is preferred:
+
+- Kubernetes
+- Redis
+- Kafka
+- CI/CD
+- Jenkins
+- Terraform
+- Microservices
+- GraphQL
+
+--------------------------------------------------
+EXPERIENCE REQUIREMENTS
+--------------------------------------------------
+
+- 2+ years of professional software development
+  experience.
+- Experience designing and developing REST APIs.
+- Experience working with relational databases.
+- Experience deploying applications to cloud platforms.
+- Experience working in Linux environments.
+- Experience with containerization and Docker.
+- Ability to write clean, maintainable and testable code.
+
+--------------------------------------------------
+PROJECT EXPERIENCE
+--------------------------------------------------
+
+Candidates should demonstrate experience building
+at least one backend or distributed-system project.
+
+Projects involving cloud deployment, APIs,
+microservices or scalable backend systems will be
+highly valued.
+
+--------------------------------------------------
+EDUCATION
+--------------------------------------------------
+
+Bachelor's degree in Computer Science, Information
+Technology, Software Engineering or a related field.
+
+--------------------------------------------------
+RESPONSIBILITIES
+--------------------------------------------------
+
+- Design and develop backend services.
+- Build and maintain REST APIs.
+- Work with PostgreSQL and other databases.
+- Deploy services to AWS.
+- Containerize applications using Docker.
+- Write unit and integration tests.
+- Participate in code reviews.
+- Troubleshoot production issues.
+- Collaborate with frontend and DevOps teams.
+- Follow software engineering best practices.
+
+--------------------------------------------------
+BONUS
+--------------------------------------------------
+
+Candidates with experience in machine learning,
+artificial intelligence or data engineering will
+receive additional consideration.

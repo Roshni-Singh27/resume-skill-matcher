@@ -1,0 +1,151 @@
+PRIYA SHARMA
+Junior Software Developer | B.Tech Computer Science
+
+Email: priya.sharma@example.com
+GitHub: github.com/priyasharma
+LinkedIn: linkedin.com/in/priyasharma
+
+--------------------------------------------------
+PROFESSIONAL SUMMARY
+--------------------------------------------------
+
+Computer Science graduate with 1.5 years of professional
+experience in software development. Strong foundation in
+Python, Java, SQL, Git and REST API development.
+
+Interested in backend development, cloud computing,
+machine learning and scalable software systems.
+
+--------------------------------------------------
+TECHNICAL SKILLS
+--------------------------------------------------
+
+Programming Languages:
+- Python
+- Java
+- C++
+- JavaScript
+
+Web Technologies:
+- HTML
+- CSS
+- REST API
+
+Frameworks and Libraries:
+- Flask
+- React
+- NumPy
+- Pandas
+- Scikit-learn
+
+Databases:
+- MySQL
+- PostgreSQL
+- MongoDB
+
+Tools:
+- Git
+- GitHub
+- Linux
+
+Cloud:
+- Basic AWS knowledge
+
+Other:
+- Machine Learning
+- Data Structures and Algorithms
+- Object-Oriented Programming
+
+--------------------------------------------------
+PROFESSIONAL EXPERIENCE
+--------------------------------------------------
+
+Junior Software Developer
+TechNova Solutions
+January 2025 - June 2026
+
+- Developed Python-based backend applications.
+- Built REST APIs using Flask.
+- Worked with MySQL and PostgreSQL databases.
+- Used Git and GitHub for version control.
+- Fixed bugs and improved application performance.
+- Collaborated with frontend developers to integrate APIs.
+- Participated in code reviews and agile development.
+- Worked with Linux development environments.
+
+--------------------------------------------------
+PROJECTS
+--------------------------------------------------
+
+1. AI Resume Skill Matcher
+
+- Built a resume analysis application using Python
+  and Streamlit.
+- Used Ollama and a local LLM for resume analysis.
+- Extracted technical skills from resumes.
+- Compared resume skills with job requirements.
+- Generated missing skill recommendations.
+- Implemented a weighted candidate suitability score.
+
+Technologies:
+Python, Streamlit, Ollama, LLM, Machine Learning
+
+--------------------------------------------------
+
+2. E-Commerce Backend API
+
+- Developed a backend REST API for an e-commerce
+  application.
+- Implemented authentication and CRUD operations.
+- Used Flask and PostgreSQL.
+- Tested API endpoints using Postman.
+
+Technologies:
+Python, Flask, PostgreSQL, REST API, Git
+
+--------------------------------------------------
+
+3. Customer Churn Prediction
+
+- Built a machine learning model to predict
+  customer churn.
+- Performed data cleaning and exploratory analysis.
+- Compared Logistic Regression, Decision Tree
+  and Random Forest models.
+- Evaluated the model using accuracy and F1-score.
+
+Technologies:
+Python, Pandas, NumPy, Scikit-learn,
+Machine Learning
+
+--------------------------------------------------
+EDUCATION
+--------------------------------------------------
+
+B.Tech in Computer Science and Engineering
+ABC Institute of Technology
+2022 - 2026
+
+Relevant Coursework:
+- Data Structures and Algorithms
+- Database Management Systems
+- Operating Systems
+- Computer Networks
+- Machine Learning
+- Object-Oriented Programming
+
+--------------------------------------------------
+CERTIFICATIONS
+--------------------------------------------------
+
+- Python Programming
+- Machine Learning Fundamentals
+- SQL Fundamentals
+
+--------------------------------------------------
+ADDITIONAL INFORMATION
+--------------------------------------------------
+
+Strong problem-solving and communication skills.
+Interested in backend development and artificial
+intelligence.

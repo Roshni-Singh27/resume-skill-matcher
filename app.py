@@ -144,15 +144,29 @@ if st.button(
 
                 technical_score = match_result["score"]
 
+                experience_score = (
+                    result.experience_score * 10
+                )
+
+                project_score = (
+                    result.project_score * 10
+                )
+
                 llm_score = (
                     result.suitability_score * 10
                 )
 
+
                 final_score = (
-                    technical_score * 0.70
+                    technical_score * 0.50
                     +
-                    llm_score * 0.30
+                    experience_score * 0.20
+                    +
+                    project_score * 0.15
+                    +
+                    llm_score * 0.15
                 )
+
 
                 final_score = round(
                     final_score,
@@ -176,7 +190,7 @@ if st.button(
                 "🎯 Resume Match Score"
             )
 
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3, col4 = st.columns(4)
 
 
             with col1:
@@ -190,7 +204,7 @@ if st.button(
             with col2:
 
                 st.metric(
-                    "Technical Skill Match",
+                    "Technical Skills",
                     f"{technical_score}%"
                 )
 
@@ -198,11 +212,23 @@ if st.button(
             with col3:
 
                 st.metric(
-                    "AI Evaluation",
-                    f"{result.suitability_score}/10"
+                    "Experience",
+                    f"{experience_score}%"
                 )
 
 
+            with col4:
+
+                st.metric(
+                    "Projects",
+                    f"{project_score}%"
+                )
+
+
+            st.metric(
+                "🤖 AI Evaluation",
+                    f"{result.suitability_score}/10"
+            )
             st.progress(
                 int(final_score)
             )
@@ -395,6 +421,43 @@ if st.button(
 
 
             st.divider()
+
+
+            st.divider()
+
+
+            # ==========================================
+            # EXPERIENCE ANALYSIS
+            # ==========================================
+
+            st.subheader(
+                "💼 Experience Analysis"
+            )
+
+            st.write(
+                result.experience_match
+            )
+
+            st.progress(
+                int(experience_score)
+            )
+
+
+            # ==========================================
+            # PROJECT RELEVANCE
+            # ==========================================
+
+            st.subheader(
+                "🚀 Project Relevance"
+            )
+
+            st.write(
+                result.project_match
+            )
+
+            st.progress(
+                int(project_score)
+            )
 
 
             # ==========================================

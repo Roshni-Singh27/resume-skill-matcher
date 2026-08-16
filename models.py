@@ -13,6 +13,20 @@ class ResumeAnalysis(BaseModel):
 
     weaknesses: list[str]
 
+    experience_match: str
+
+    experience_score: float = Field(
+        ge=0,
+        le=10
+    )
+
+    project_match: str
+
+    project_score: float = Field(
+        ge=0,
+        le=10
+    )
+
     suitability_score: float = Field(
         ge=0,
         le=10
