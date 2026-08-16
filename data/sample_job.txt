@@ -1,0 +1,30 @@
+JOB TITLE: Junior Machine Learning Engineer
+
+We are looking for a Junior Machine Learning Engineer.
+
+REQUIRED SKILLS:
+
+Python
+Machine Learning
+Scikit-learn
+NumPy
+Pandas
+SQL
+Git
+Data Analysis
+
+RESPONSIBILITIES:
+
+Build and maintain machine learning models.
+Clean and preprocess datasets.
+Analyze data using Python.
+Develop machine learning pipelines.
+Work with other developers and data scientists.
+Use Git for version control.
+
+QUALIFICATIONS:
+
+Bachelor's degree in Computer Science, Data Science,
+Artificial Intelligence or a related field.
+
+Good programming and problem-solving skills.
