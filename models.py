@@ -19,3 +19,10 @@ class ResumeAnalysis(BaseModel):
     )
 
     improvement_suggestions: list[str]
+
+
+class SkillExtraction(BaseModel):
+
+    resume_skills: list[str]
+
+    job_skills: list[str]

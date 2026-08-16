@@ -2,8 +2,12 @@ import streamlit as st
 
 from resume_parser import extract_resume_text
 from llm import analyze_resume
-from matcher import extract_skills, calculate_match
 from skill_gap import analyze_skill_gap
+from matcher import calculate_match
+
+from skill_extractor import (
+    extract_skills_with_llm
+)
 
 
 # --------------------------------------------------
@@ -110,15 +114,20 @@ if st.button(
                 )
 
                 # Extract skills
-                resume_skills = extract_skills(
-                    resume_text
-                )
+                # Intelligent LLM-based skill extraction
 
-                job_skills = extract_skills(
+                skill_result = extract_skills_with_llm(
+                    resume_text,
                     job_description
                 )
 
-                # Calculate skill match
+                resume_skills = skill_result.resume_skills
+
+                job_skills = skill_result.job_skills
+
+
+                # Deterministic skill matching
+
                 match_result = calculate_match(
                     resume_skills,
                     job_skills

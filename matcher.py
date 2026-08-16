@@ -89,29 +89,109 @@ def extract_skills(text):
     return sorted(found_skills)
 
 
-def calculate_match(resume_skills, job_skills):
-    """
-    Calculate percentage of required job skills
-    present in the resume.
-    """
+def normalize_skill(skill):
+
+    skill = skill.lower().strip()
+
+    aliases = {
+
+        "rest apis": "rest api",
+        "restful api": "rest api",
+        "restful apis": "rest api",
+
+        "nodejs": "node.js",
+        "node js": "node.js",
+
+        "scikit learn": "scikit-learn",
+        "scikit learn library": "scikit-learn",
+
+        "amazon web services": "aws",
+
+        "google cloud platform": "gcp",
+
+        "microsoft azure": "azure",
+
+        "postgres": "postgresql",
+
+        "mongo": "mongodb",
+
+        "reactjs": "react",
+        "react.js": "react",
+
+        "nextjs": "next.js",
+
+        "machine-learning": "machine learning",
+
+        "deep-learning": "deep learning",
+
+        "artificial intelligence": "artificial intelligence",
+
+    }
+
+    return aliases.get(
+        skill,
+        skill
+    )
+
+
+def normalize_skill_list(skills):
+
+    normalized = set()
+
+    for skill in skills:
+
+        normalized.add(
+            normalize_skill(skill)
+        )
+
+    return sorted(normalized)
+
+
+def calculate_match(
+    resume_skills,
+    job_skills
+):
+
+    resume_skills = normalize_skill_list(
+        resume_skills
+    )
+
+    job_skills = normalize_skill_list(
+        job_skills
+    )
 
     resume_set = set(resume_skills)
+
     job_set = set(job_skills)
 
     if not job_set:
 
-        return 0
+        return {
+            "matching_skills": [],
+            "missing_skills": [],
+            "score": 0
+        }
 
-    matching = resume_set.intersection(job_set)
+    matching = (
+        resume_set.intersection(job_set)
+    )
 
-    missing = job_set - resume_set
+    missing = (
+        job_set - resume_set
+    )
 
     score = (
-        len(matching) / len(job_set)
+        len(matching) /
+        len(job_set)
     ) * 100
 
     return {
         "matching_skills": sorted(matching),
+
         "missing_skills": sorted(missing),
-        "score": round(score, 2)
+
+        "score": round(
+            score,
+            2
+        )
     }
