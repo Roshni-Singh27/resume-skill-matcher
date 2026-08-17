@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 from resume_parser import extract_resume_text
 from llm import analyze_resume
@@ -152,19 +153,25 @@ if st.button(
                     result.project_score * 10
                 )
 
+                education_score = (
+                    result.education_score * 10
+                )
+
                 llm_score = (
                     result.suitability_score * 10
                 )
 
 
                 final_score = (
-                    technical_score * 0.50
+                    technical_score * 0.45
                     +
                     experience_score * 0.20
                     +
                     project_score * 0.15
                     +
-                    llm_score * 0.15
+                    education_score * 0.10
+                    +
+                    llm_score * 0.10
                 )
 
 
@@ -190,7 +197,7 @@ if st.button(
                 "🎯 Resume Match Score"
             )
 
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3, col4, col5 = st.columns(5)
 
 
             with col1:
@@ -225,12 +232,257 @@ if st.button(
                 )
 
 
+            with col5:
+
+                st.metric(
+                    "Education",
+                    f"{education_score}%"
+                )
+
             st.metric(
                 "🤖 AI Evaluation",
                     f"{result.suitability_score}/10"
             )
             st.progress(
                 int(final_score)
+            )
+            
+            # ==========================================
+            # CANDIDATE EVALUATION CHART
+            # ==========================================
+
+            st.subheader(
+                "📊 Candidate Evaluation"
+            )
+
+            chart_data = {
+                "Category": [
+                    "Technical Skills",
+                    "Experience",
+                    "Projects",
+                    "Education",
+                    "AI Evaluation"
+                ],
+
+                "Score": [
+                    technical_score,
+                    experience_score,
+                    project_score,
+                    education_score,
+                    llm_score
+                ]
+            }
+
+            df = pd.DataFrame(chart_data)
+
+            st.bar_chart(
+                df.set_index("Category")
+            )
+            
+            
+            st.subheader(
+                "👤 Candidate Profile"
+            )
+
+            col1, col2, col3 = st.columns(3)
+
+            with col1:
+
+                st.metric(
+                    "Candidate Type",
+                    result.candidate_type
+                )
+
+            with col2:
+
+                st.metric(
+                    "Experience",
+                    f"{experience_score}%"
+                )
+
+            with col3:
+
+                st.metric(
+                    "Education",
+                    f"{education_score}%"
+                )
+                
+            # ==========================================
+            # DOWNLOADABLE ANALYSIS REPORT
+            # ==========================================
+
+            report = f"""
+            AI RESUME SKILL MATCHER
+            =======================
+
+            RESUME ANALYSIS REPORT
+
+
+            OVERALL MATCH
+            -------------
+            Final Match Score: {final_score}%
+
+
+            SCORE BREAKDOWN
+            ---------------
+
+            Technical Skills: {technical_score}%
+            Experience: {experience_score}%
+            Projects: {project_score}%
+            Education: {education_score}%
+            AI Evaluation: {result.suitability_score}/10
+
+
+            CANDIDATE PROFILE
+            -----------------
+
+            Candidate Type:
+            {result.candidate_type}
+
+
+            MATCHING SKILLS
+            ---------------
+
+            """
+
+            for skill in match_result["matching_skills"]:
+
+                report += f"✓ {skill}\n"
+
+
+            report += """
+
+            MISSING SKILLS
+            --------------
+
+            """
+
+            for skill in match_result["missing_skills"]:
+
+                report += f"✗ {skill}\n"
+
+
+            report += """
+
+            SKILL GAP ANALYSIS
+            ------------------
+
+            Priority Skills:
+            """
+
+            if skill_gap["priority"]:
+
+                for skill in skill_gap["priority"]:
+
+                    report += f"- {skill}\n"
+
+            else:
+
+                report += "No major skill gaps detected.\n"
+
+
+            report += """
+
+            RECOMMENDED ACTIONS
+            -------------------
+
+            """
+
+            if skill_gap["recommendations"]:
+
+                for recommendation in skill_gap["recommendations"]:
+
+                    report += f"- {recommendation}\n"
+
+            else:
+
+                report += "No recommendations available.\n"
+
+
+            report += f"""
+            
+
+            EXPERIENCE ANALYSIS
+            -------------------
+
+            {result.experience_match}
+
+            Experience Score:
+            {experience_score}%
+
+
+            PROJECT RELEVANCE
+            -----------------
+
+            {result.project_match}
+
+            Project Score:
+            {project_score}%
+
+
+            EDUCATION ANALYSIS
+            ------------------
+
+            {result.education_match}
+
+            Education Score:
+            {education_score}%
+
+
+            CANDIDATE SUMMARY
+            -----------------
+
+            {result.candidate_summary}
+
+
+            STRENGTHS
+            ---------
+
+            """
+
+            for strength in result.strengths:
+
+                report += f"- {strength}\n"
+
+
+            report += """
+
+            WEAKNESSES
+            ----------
+
+            """
+
+            for weakness in result.weaknesses:
+
+                report += f"- {weakness}\n"
+
+
+            report += """
+
+            IMPROVEMENT SUGGESTIONS
+            -----------------------
+
+            """
+
+            for suggestion in result.improvement_suggestions:
+
+                report += f"- {suggestion}\n"
+                
+            # ==========================================
+            # DOWNLOAD REPORT
+            # ==========================================
+
+            st.divider()
+
+            st.subheader(
+                "📥 Download Report"
+            )
+                
+            st.download_button(
+                label="📥 Download Analysis Report",
+                data=report,
+                file_name="resume_analysis_report.txt",
+                mime="text/plain"
             )
 
 
@@ -268,7 +520,6 @@ if st.button(
 
 
             st.divider()
-
 
             # ==========================================
             # SKILLS SECTION
@@ -414,14 +665,16 @@ if st.button(
                 for recommendation in skill_gap[
                     "recommendations"
                 ]:
-
+                    
                     st.info(
-                        recommendation
-                    )
+                                recommendation
+                            )
+            else:
 
-
-            st.divider()
-
+                st.success(
+                    "No additional recommendations."
+                )
+                    
 
             st.divider()
 
@@ -457,6 +710,19 @@ if st.button(
 
             st.progress(
                 int(project_score)
+            )
+            
+            
+            st.subheader(
+                "🎓 Education Analysis"
+            )
+
+            st.write(
+                result.education_match
+            )
+
+            st.progress(
+                int(education_score)
             )
 
 
