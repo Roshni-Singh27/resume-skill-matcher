@@ -6,6 +6,7 @@ class ResumeAnalysis(BaseModel):
     matching_skills: list[str]
 
     missing_skills: list[str]
+    
 
     candidate_summary: str
 
@@ -13,6 +14,8 @@ class ResumeAnalysis(BaseModel):
 
     weaknesses: list[str]
 
+    candidate_type: str
+    
     experience_match: str
 
     experience_score: float = Field(
@@ -23,6 +26,13 @@ class ResumeAnalysis(BaseModel):
     project_match: str
 
     project_score: float = Field(
+        ge=0,
+        le=10
+    )
+    
+    education_match: str
+
+    education_score: float = Field(
         ge=0,
         le=10
     )

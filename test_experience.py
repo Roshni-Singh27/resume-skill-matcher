@@ -62,6 +62,19 @@ print(f"{result.experience_score}/10")
 
 
 print("\n" + "=" * 50)
+print("EDUCATION MATCH")
+print("=" * 50)
+
+print(result.education_match)
+
+
+print("\n" + "=" * 50)
+print("EDUCATION SCORE")
+print("=" * 50)
+
+print(f"{result.education_score}/10")
+
+print("\n" + "=" * 50)
 print("PROJECT MATCH")
 print("=" * 50)
 

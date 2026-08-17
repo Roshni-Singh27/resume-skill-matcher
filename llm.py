@@ -52,6 +52,22 @@ List 3 or fewer important candidate strengths.
 weaknesses:
 List 3 or fewer important weaknesses.
 
+candidate_type:
+Classify the candidate as exactly one of:
+
+Fresher
+Entry-Level
+Experienced
+
+Use Fresher when there is no professional
+work experience.
+
+Use Entry-Level when the candidate has
+limited professional experience.
+
+Use Experienced when the candidate has
+substantial professional experience.
+
 
 experience_match:
 Write ONLY 1-2 short sentences comparing
@@ -63,6 +79,26 @@ Give a number from 0 to 10.
 0 means no relevant experience.
 10 means the candidate fully meets the
 experience requirements.
+
+EDUCATION ANALYSIS:
+
+education_match:
+Write ONLY 1-2 short sentences comparing
+the candidate's education with the job's
+education requirements.
+
+education_score:
+Give a number from 0 to 10.
+
+10 means the candidate fully meets the
+education requirements.
+
+5 means the education is somewhat relevant.
+
+0 means the candidate does not meet the
+education requirements.
+
+Do not invent degrees or qualifications.
 
 
 PROJECT ANALYSIS:
@@ -80,8 +116,13 @@ If no projects are mentioned, clearly state that.
 
 
 suitability_score:
-Give an overall score from 0 to 10 based on
-skills, experience, projects and overall fit.
+Give an overall score from 0 to 10 based on:
+
+- technical skills
+- professional experience
+- projects
+- education
+- overall job fit
 
 improvement_suggestions:
 List 3-5 specific suggestions for improving

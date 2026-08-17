@@ -43,6 +43,22 @@ MISSING SKILLS:
 CANDIDATE SUMMARY:
 Write a short summary.
 
+candidate_type:
+Classify the candidate as exactly one of:
+
+Fresher
+Entry-Level
+Experienced
+
+Use Fresher when there is no professional
+work experience.
+
+Use Entry-Level when there is limited
+professional experience.
+
+Use Experienced when the candidate has
+substantial professional experience.
+
 STRENGTHS:
 - strength 1
 - strength 2
