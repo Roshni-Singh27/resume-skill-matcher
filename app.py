@@ -5,6 +5,7 @@ from resume_parser import extract_resume_text
 from llm import analyze_resume
 from skill_gap import analyze_skill_gap
 from matcher import calculate_match
+from pdf_report import create_pdf_report
 
 from skill_extractor import (
     extract_skills_with_llm
@@ -483,6 +484,38 @@ if st.button(
                 data=report,
                 file_name="resume_analysis_report.txt",
                 mime="text/plain"
+            )
+            
+            # ==========================================
+            # PDF REPORT
+            # ==========================================
+
+            pdf_data = create_pdf_report(
+                final_score=final_score,
+                technical_score=technical_score,
+                experience_score=experience_score,
+                project_score=project_score,
+                education_score=education_score,
+                llm_score=llm_score,
+                candidate_type=result.candidate_type,
+                matching_skills=match_result["matching_skills"],
+                missing_skills=match_result["missing_skills"],
+                skill_gap=skill_gap,
+                experience_match=result.experience_match,
+                project_match=result.project_match,
+                education_match=result.education_match,
+                candidate_summary=result.candidate_summary,
+                strengths=result.strengths,
+                weaknesses=result.weaknesses,
+                improvement_suggestions=result.improvement_suggestions
+            )
+
+
+            st.download_button(
+                label="📄 Download PDF Report",
+                data=pdf_data,
+                file_name="resume_analysis_report.pdf",
+                mime="application/pdf"
             )
 
 
