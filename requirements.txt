@@ -1,6 +1,5 @@
-streamlit
-ollama
-pypdf
-python-docx
-pandas
-pydantic
+streamlit==1.61.1
+ollama==0.6.2
+pypdf==6.16.1
+pydantic==2.13.4
+reportlab==5.0.0
