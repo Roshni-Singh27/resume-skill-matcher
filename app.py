@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import ollama
 
 from resume_parser import extract_resume_text
 from llm import analyze_resume
@@ -16,18 +17,64 @@ from skill_extractor import (
 # PAGE CONFIGURATION
 # --------------------------------------------------
 
+def check_ollama():
+
+    try:
+
+        response = ollama.list()
+
+        for model in response.models:
+
+            model_name = model.model
+
+            if model_name == "llama3.2:3b":
+
+                return True, "Ollama + model ready"
+
+        return False, "Model llama3.2:3b not found"
+
+    except Exception:
+
+        return False, "Ollama is not running"
+    
+    
 st.set_page_config(
     page_title="AI Resume Skill Matcher",
     page_icon="📄",
     layout="wide"
 )
 
+status, message = check_ollama()
+
+st.sidebar.title(
+    "⚙️ System Status"
+)
+
+if status:
+
+    st.sidebar.success(
+        f"🟢 {message}"
+    )
+
+else:
+
+    st.sidebar.error(
+        f"🔴 {message}"
+    )
+
+
+st.title(
+    "📄 AI-Powered Resume Skill Matcher"
+)
+
+
+
+
 
 # --------------------------------------------------
 # HEADER
 # --------------------------------------------------
 
-st.title("📄 AI-Powered Resume Skill Matcher")
 
 st.write(
     "Analyze your resume against a job description "
@@ -51,6 +98,12 @@ with col1:
     resume_file = st.file_uploader(
         "Upload Resume",
         type=["pdf", "txt"]
+    )
+    
+    if resume_file:
+
+        st.caption(
+            f"Uploaded: {resume_file.name}"
     )
 
 
@@ -89,10 +142,27 @@ if st.button(
     elif not job_description.strip():
 
         st.error(
-            "Please enter a job description."
+            "❌ Please enter a job description."
+        )
+
+    elif len(job_description.strip()) < 100:
+
+        st.warning(
+            "⚠️ The job description is too short. "
+            "Please provide a complete job description."
         )
 
     else:
+        
+        status, message = check_ollama()
+
+        if not status:
+
+            st.error(
+                f"❌ {message}"
+            )
+
+            st.stop()
 
         try:
 
@@ -108,6 +178,25 @@ if st.button(
                 resume_text = extract_resume_text(
                     resume_file
                 )
+                
+                if not resume_text or not resume_text.strip():
+
+                    st.error(
+                        "❌ Could not extract text from the resume. "
+                        "Please upload a text-based PDF or TXT file."
+                    )
+
+                    st.stop()
+
+
+                if len(resume_text.strip()) < 100:
+
+                    st.warning(
+                        "⚠️ The resume contains very little text. "
+                        "Please upload a complete resume."
+                    )
+
+                    st.stop()
 
                 # LLM analysis
                 result = analyze_resume(
@@ -837,6 +926,31 @@ if st.button(
 
         except Exception as e:
 
-            st.error(
-                f"Analysis failed: {e}"
-            )
+            error_message = str(e)
+
+            if "connection" in error_message.lower():
+
+                st.error(
+                    "❌ Cannot connect to Ollama. "
+                    "Please make sure Ollama is running."
+                )
+
+            elif "model" in error_message.lower():
+
+                st.error(
+                    "❌ The required Ollama model was not found. "
+                    "Please make sure the model is installed."
+                )
+
+            elif "json" in error_message.lower():
+
+                st.error(
+                    "❌ The AI returned an invalid response. "
+                    "Please try the analysis again."
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Analysis failed: {error_message}"
+                )
