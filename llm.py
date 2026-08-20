@@ -1,9 +1,13 @@
+import os
 import ollama
 
 from models import ResumeAnalysis
 
 
-MODEL_NAME = "llama3.2:3b"
+MODEL_NAME = os.getenv(
+    "OLLAMA_MODEL",
+    "llama3.2:3b"
+)
 
 
 def analyze_resume(
