@@ -1,100 +1,63 @@
-BACKEND SOFTWARE ENGINEER
-TechAI Innovations
+## Software Developer Intern
 
---------------------------------------------------
-JOB DESCRIPTION
---------------------------------------------------
+**Company:** TechNova Solutions
+**Location:** Noida, India
+**Job Type:** Internship / Full-Time Opportunity
 
-We are looking for a Backend Software Engineer to
-join our engineering team.
+### About the Role
 
-The candidate will be responsible for developing,
-testing and maintaining scalable backend services
-and APIs.
+We are looking for a motivated Software Developer Intern to join our development team. The candidate will work on web applications, software development, APIs, and data-driven features while collaborating with other developers to build scalable and user-friendly solutions.
 
---------------------------------------------------
-REQUIRED SKILLS
---------------------------------------------------
+### Responsibilities
 
-The candidate must have experience with:
+* Develop and maintain web applications using modern programming languages.
+* Write clean, efficient, and maintainable code.
+* Build responsive user interfaces using HTML, CSS, and JavaScript.
+* Work with REST APIs and integrate third-party services.
+* Debug applications and solve technical problems.
+* Collaborate with team members using Git and GitHub.
+* Work with databases and perform basic data management.
+* Participate in code reviews and software testing.
+* Explore AI/ML-based solutions for improving software products.
 
-- Python
-- FastAPI
-- REST APIs
-- PostgreSQL
-- Docker
-- Git
-- Linux
-- AWS
-- SQL
-- Object-Oriented Programming
-- Data Structures and Algorithms
+### Required Skills
 
---------------------------------------------------
-PREFERRED SKILLS
---------------------------------------------------
+* JavaScript
+* HTML5
+* CSS3
+* Python
+* Java
+* C++
+* Git & GitHub
+* REST APIs
+* SQL / Database fundamentals
+* Data Structures and Algorithms
+* Problem-Solving
+* Object-Oriented Programming
+* Basic Software Development knowledge
 
-Experience with the following technologies is preferred:
+### Good to Have
 
-- Kubernetes
-- Redis
-- Kafka
-- CI/CD
-- Jenkins
-- Terraform
-- Microservices
-- GraphQL
+* React.js
+* Node.js
+* TypeScript
+* MongoDB
+* Docker
+* Cloud Platforms
+* Machine Learning
+* Generative AI
+* Unit Testing
 
---------------------------------------------------
-EXPERIENCE REQUIREMENTS
---------------------------------------------------
+### Eligibility
 
-- 2+ years of professional software development
-  experience.
-- Experience designing and developing REST APIs.
-- Experience working with relational databases.
-- Experience deploying applications to cloud platforms.
-- Experience working in Linux environments.
-- Experience with containerization and Docker.
-- Ability to write clean, maintainable and testable code.
+* Currently pursuing a B.Tech/B.E. in Computer Science, Information Technology, or a related field.
+* Good programming and problem-solving skills.
+* Strong willingness to learn new technologies.
+* Ability to work effectively in a team.
 
---------------------------------------------------
-PROJECT EXPERIENCE
---------------------------------------------------
+### What We Offer
 
-Candidates should demonstrate experience building
-at least one backend or distributed-system project.
-
-Projects involving cloud deployment, APIs,
-microservices or scalable backend systems will be
-highly valued.
-
---------------------------------------------------
-EDUCATION
---------------------------------------------------
-
-Bachelor's degree in Computer Science, Information
-Technology, Software Engineering or a related field.
-
---------------------------------------------------
-RESPONSIBILITIES
---------------------------------------------------
-
-- Design and develop backend services.
-- Build and maintain REST APIs.
-- Work with PostgreSQL and other databases.
-- Deploy services to AWS.
-- Containerize applications using Docker.
-- Write unit and integration tests.
-- Participate in code reviews.
-- Troubleshoot production issues.
-- Collaborate with frontend and DevOps teams.
-- Follow software engineering best practices.
-
---------------------------------------------------
-BONUS
---------------------------------------------------
-
-Candidates with experience in machine learning,
-artificial intelligence or data engineering will
-receive additional consideration.
+* Hands-on experience with real-world software projects.
+* Mentorship from experienced developers.
+* Opportunity to work with modern development technologies.
+* Certificate and performance-based full-time opportunity.
